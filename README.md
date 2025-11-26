@@ -1,7 +1,5 @@
 # 🐷 WishSaver: Aplikasi Pengelola Wishlist & Tabungan
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](link_deployment_streamlit_anda)
-
 WishSaver adalah sebuah aplikasi web sederhana yang dirancang untuk membantu pengguna melacak tujuan pembelian mereka (*wishlist*) dan memantau kemajuan tabungan yang telah dikumpulkan.
 
 Dibangun dengan Python (Streamlit) sebagai *frontend* dan MySQL sebagai *backend*, aplikasi ini merupakan contoh dari proyek full-stack ringan untuk manajemen keuangan pribadi.
@@ -70,4 +68,4 @@ Dibangun dengan Python (Streamlit) sebagai *frontend* dan MySQL sebagai *backend
         streamlit run main.py
         ```
 
-Aplikasi akan terbuka secara otomatis di *browser* Anda (biasanya di `http://localhost:8501`).
+Aplikasi akan terbuka secara otomatis di *browser* Anda (default port st `http://localhost:8501`).
