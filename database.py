@@ -1,5 +1,21 @@
 import mysql.connector
 from mysql.connector import Error
+import os
+
+def get_db_connection():
+    DB_CONFIG_EXTERNAL = {
+        'host': os.getenv("DB_HOST"),
+        'user': os.getenv("DB_USER"),
+        'password': os.getenv("DB_PASSWORD"),
+        'database': os.getenv("DB_DATABASE"),
+        'port': int(os.getenv("DB_PORT", 3306))
+    }
+    try:
+        conn = mysql.connector.connect(**DB_CONFIG_EXTERNAL)
+        return conn
+    except Error as e:
+        print(f"Error connecting to SingleStore/MySQL database: {e}")
+        return None
 
 DB_CONFIG = {
     'host': 'localhost',
@@ -7,14 +23,6 @@ DB_CONFIG = {
     'password': '',
     'database': 'wishsaver_db'
 }
-
-def get_db_connection():
-    try:
-        conn = mysql.connector.connect(**DB_CONFIG)
-        return conn
-    except Error as e:
-        print(f"Error connecting to MySQL database: {e}")
-        return None
 
 def get_user_by_username(username):
     conn = get_db_connection()
